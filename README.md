@@ -110,11 +110,11 @@ Flutter Triad includes a built-in error handling system that seamlessly integrat
 # Contributing
 We welcome contributions to enhance Flutter Triad. To contribute, please follow these steps:
 
-**1. Fork the repository on GitHub.**
-**2. Create a new branch with a descriptive name for your feature or bug fix.**
-**3. Make the necessary changes and additions.**
-**4. Commit and push your changes to your forked repository.**
-**5. Submit a pull request, explaining the changes made and their purpose.**
+1. Fork the repository on GitHub.
+2. Create a new branch with a descriptive name for your feature or bug fix.
+3. Make the necessary changes and additions.
+4. Commit and push your changes to your forked repository.
+5. Submit a pull request, explaining the changes made and their purpose.
 
 # License
 Flutter Triad is released under the MIT License.
