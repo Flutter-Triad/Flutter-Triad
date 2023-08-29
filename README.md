@@ -1,6 +1,6 @@
 # Flutter Triad
 
-![Flutter Triad Logo](https://example.com/flutter_triad_logo.png)
+![Flutter Triad Logo](https://flutter-triad.actit.ps/assets/img/logo.svg)
 
 Flutter Triad is a clean architecture-based Flutter template designed to accelerate app development by providing a structured and organized project foundation. Whether you're building a new app or refactoring an existing one, Flutter Triad simplifies the development process, making it more efficient and maintainable.
 
