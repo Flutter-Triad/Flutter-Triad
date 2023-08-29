@@ -77,47 +77,49 @@ To get started with Flutter Triad, follow these steps:
    
 4. Run the app:
 
-    ```bash
+   ```bash
    flutter run 
    ```
    
 This will launch the app on your default emulator or connected device.
 
-# Running the App
-# To launch the app on your default emulator or connected device, use the following command:
-flutter run
+Running the App
+To launch the app on your default emulator or connected device, use the following command:
+   ```bash
+   flutter run 
+   ```
 
 # Project Structure
-# Flutter Triad follows a clean architecture pattern, organizing the project into the following layers:
+Flutter Triad follows a clean architecture pattern, organizing the project into the following layers:
 
-# - **data**: Contains data-related logic, including data sources, repositories, and models.
-# - **domain**: Contains the core business logic, including use cases and entities.
-# - **presentation**: Contains the UI-related logic, including views, controllers, and presenters.
+- **data**: Contains data-related logic, including data sources, repositories, and models.
+- **domain**: Contains the core business logic, including use cases and entities.
+- **presentation**: Contains the UI-related logic, including views, controllers, and presenters.
 
-# This structure promotes separation of concerns, making your codebase more maintainable and testable.
+This structure promotes separation of concerns, making your codebase more maintainable and testable.
 
 # State Management
-# Flutter Triad is flexible when it comes to state management. You can choose your preferred state management solution, such as Provider, GetX, or Riverpod. The project is designed to work seamlessly with your choice.
+Flutter Triad is flexible when it comes to state management. You can choose your preferred state management solution, such as Provider, GetX, or Riverpod. The project is designed to work seamlessly with your choice.
 
 # Networking
-# Simplify API requests with Retrofit and Dio. Use code generation to create network-related files, reducing boilerplate code. Retrofit and Dio integration makes working with APIs efficient and straightforward.
+Simplify API requests with Retrofit and Dio. Use code generation to create network-related files, reducing boilerplate code. Retrofit and Dio integration makes working with APIs efficient and straightforward.
 
 # Error Handling
-# Flutter Triad includes a built-in error handling system that seamlessly integrates with Dio. Handle errors gracefully and provide a smooth user experience even when things go wrong.
+Flutter Triad includes a built-in error handling system that seamlessly integrates with Dio. Handle errors gracefully and provide a smooth user experience even when things go wrong.
 
 # Contributing
-# We welcome contributions to enhance Flutter Triad. To contribute, please follow these steps:
+We welcome contributions to enhance Flutter Triad. To contribute, please follow these steps:
 
-# 1. Fork the repository on GitHub.
-# 2. Create a new branch with a descriptive name for your feature or bug fix.
-# 3. Make the necessary changes and additions.
-# 4. Commit and push your changes to your forked repository.
-# 5. Submit a pull request, explaining the changes made and their purpose.
+**1. Fork the repository on GitHub.**
+**2. Create a new branch with a descriptive name for your feature or bug fix.**
+**3. Make the necessary changes and additions.**
+**4. Commit and push your changes to your forked repository.**
+**5. Submit a pull request, explaining the changes made and their purpose.**
 
 # License
-# Flutter Triad is released under the MIT License.
+Flutter Triad is released under the MIT License.
 
 # Contact
-# If you have any questions, suggestions, or feedback, please feel free to reach out to our team at email@example.com.
+If you have any questions, suggestions, or feedback, please feel free to reach out to our team at email@example.com.
 
-# Thank you for choosing Flutter Triad. We hope it streamlines your app development and helps you create amazing Flutter apps!
+**Thank you for choosing Flutter Triad. We hope it streamlines your app development and helps you create amazing Flutter apps!**
