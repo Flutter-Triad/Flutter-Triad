@@ -83,10 +83,29 @@ To get started with Flutter Triad, follow these steps:
    
 This will launch the app on your default emulator or connected device.
 
+5. If you're using models with the `@JsonSerializable()` annotation, generate the necessary serialization code by running:
+- If you're using the Flutter SDK directly:
+  ```
+  flutter pub run build_runner build --delete-conflicting-outputs
+  ```
+- If you're using the Flutter Version Manager (FVM):
+  ```
+  fvm flutter pub run build_runner build --delete-conflicting-outputs
+  ```
 Running the App
 To launch the app on your default emulator or connected device, use the following command:
    ```bash
    flutter run 
+   ```
+## New Feature 
+For create a new feature use this commands:
+   ```bash
+   fvm dart command_file_path -f feature_name -n dart_file_name.dart 
+   ```
+
+   // Ex: 
+   ```bash
+   fvm dart lib/core/commands/custom_command.dart -f product -n product.dart 
    ```
 
 # Project Structure
@@ -120,6 +139,6 @@ We welcome contributions to enhance Flutter Triad. To contribute, please follow 
 Flutter Triad is released under the MIT License.
 
 # Contact
-If you have any questions, suggestions, or feedback, please feel free to reach out to our team at email@example.com.
+If you have any questions, suggestions, or feedback, please feel free to reach out to our team at mohanned@ait.ps.
 
 **Thank you for choosing Flutter Triad. We hope it streamlines your app development and helps you create amazing Flutter apps!**
