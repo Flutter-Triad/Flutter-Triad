@@ -1,3 +1,4 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/validator/validator.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/cache/cache.dart';
 import '../../../../core/resources/manager_strings.dart';
-import '../../../../core/state_renderer/state_renderer.dart';
 import '../../../../routes/routes.dart';
 
 class VerificationController extends GetxController {
@@ -37,7 +37,7 @@ class VerificationController extends GetxController {
       context: context,
       message: ManagerStrings.loading,
       title: '',
-      stateRenderType: StateRenderType.popupLoadingState,
+      stateRenderType: StateRenderType.popUpLoadingState,
       retryAction: () {},
     );
 
@@ -53,7 +53,7 @@ class VerificationController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.error,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
@@ -64,7 +64,7 @@ class VerificationController extends GetxController {
           context: context,
           message: ManagerStrings.verificationSuccess,
           title: ManagerStrings.thanks,
-          stateRenderType: StateRenderType.popupSuccess,
+          stateRenderType: StateRenderType.popUpSuccessState,
           retryAction: () {
             Get.back();
             Get.offAllNamed(Routes.login);
@@ -82,7 +82,7 @@ class VerificationController extends GetxController {
       context: context,
       message: ManagerStrings.loading,
       title: '',
-      stateRenderType: StateRenderType.popupLoadingState,
+      stateRenderType: StateRenderType.popUpLoadingState,
       retryAction: () {},
     );
 
@@ -92,7 +92,7 @@ class VerificationController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.error,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
@@ -103,7 +103,7 @@ class VerificationController extends GetxController {
           context: context,
           message: ManagerStrings.sendOtpSuccess,
           title: '',
-          stateRenderType: StateRenderType.popupSuccess,
+          stateRenderType: StateRenderType.popUpSuccessState,
           retryAction: () {
             Get.back();
             if (route.onNull() != '') {

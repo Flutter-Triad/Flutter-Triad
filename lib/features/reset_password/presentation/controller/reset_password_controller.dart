@@ -1,3 +1,4 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/features/reset_password/domain/usecase/reset_password_use_case.dart';
 import 'package:flutter_triad/routes/routes.dart';
@@ -5,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../config/dependency_injection.dart';
 import '../../../../core/resources/manager_strings.dart';
-import '../../../../core/state_renderer/state_renderer.dart';
 import '../../../../core/validator/validator.dart';
 import '../../../verification/domain/usecases/send_otp_usecase.dart';
 
@@ -41,7 +41,7 @@ class ResetPasswordController extends GetxController {
       context: context,
       message: ManagerStrings.loading,
       title: '',
-      stateRenderType: StateRenderType.popupLoadingState,
+      stateRenderType: StateRenderType.popUpLoadingState,
       retryAction: () {},
     );
     (await _useCase.execute(
@@ -57,7 +57,7 @@ class ResetPasswordController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.sorryFailed,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
@@ -68,7 +68,7 @@ class ResetPasswordController extends GetxController {
           context: context,
           message: ManagerStrings.passwordChangeSuccess,
           title: '',
-          stateRenderType: StateRenderType.popupSuccess,
+          stateRenderType: StateRenderType.popUpSuccessState,
           retryAction: () {
             Get.back();
             Get.offNamed(
@@ -87,7 +87,7 @@ class ResetPasswordController extends GetxController {
       context: context,
       message: ManagerStrings.loading,
       title: '',
-      stateRenderType: StateRenderType.popupLoadingState,
+      stateRenderType: StateRenderType.popUpLoadingState,
       retryAction: () {},
     );
 
@@ -97,7 +97,7 @@ class ResetPasswordController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.error,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
@@ -108,7 +108,7 @@ class ResetPasswordController extends GetxController {
           context: context,
           message: ManagerStrings.sendOtpSuccess,
           title: '',
-          stateRenderType: StateRenderType.popupSuccess,
+          stateRenderType: StateRenderType.popUpSuccessState,
           retryAction: () {
             Get.back();
           });

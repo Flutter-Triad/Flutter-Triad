@@ -1,10 +1,10 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/features/forget_password/domain/usecase/forget_password_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../config/dependency_injection.dart';
 import '../../../../core/resources/manager_strings.dart';
-import '../../../../core/state_renderer/state_renderer.dart';
 import '../../../../routes/routes.dart';
 
 class ForgetPasswordController extends GetxController {
@@ -31,7 +31,7 @@ class ForgetPasswordController extends GetxController {
       context: context,
       message: ManagerStrings.loading,
       title: '',
-      stateRenderType: StateRenderType.popupLoadingState,
+      stateRenderType: StateRenderType.popUpLoadingState,
       retryAction: () {},
     );
     (await _useCase.execute(
@@ -45,35 +45,36 @@ class ForgetPasswordController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.sorryFailed,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
       );
     }, (r) {
       Get.back();
-      if (r.status!)
+      if (r.status!) {
         dialogRender(
             context: context,
             message: ManagerStrings.sendOtpSuccess,
             title: '',
-            stateRenderType: StateRenderType.popupSuccess,
+            stateRenderType: StateRenderType.popUpSuccessState,
             retryAction: () {
               Get.back();
               Get.offNamed(
                 Routes.reset_password,
               );
             });
-      else
+      } else {
         dialogRender(
           context: context,
           message: ManagerStrings.sorryFailed,
           title: ManagerStrings.error,
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Get.back();
           },
         );
+      }
     });
   }
 }
