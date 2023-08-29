@@ -1,6 +1,6 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
-import 'package:flutter_triad/core/state_renderer/state_renderer.dart';
 import 'package:flutter_triad/features/edit_profile/data/request/edit_name_request.dart';
 import 'package:flutter_triad/features/edit_profile/data/request/edit_phone_request.dart';
 import 'package:flutter_triad/features/edit_profile/domain/usecase/edit_name_usecase.dart';
@@ -29,7 +29,7 @@ class EditProfileController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.userProfileFailed,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
@@ -46,7 +46,7 @@ class EditProfileController extends GetxController {
         context: context,
         message: ManagerStrings.loading,
         title: "",
-        stateRenderType: StateRenderType.popupLoadingState,
+        stateRenderType: StateRenderType.popUpLoadingState,
         retryAction: () {});
     (await editNameUseCase.execute(EditNameRequest(name: username.text))).fold(
       (l) {
@@ -55,7 +55,7 @@ class EditProfileController extends GetxController {
           context: context,
           message: l.message,
           title: ManagerStrings.editNameFailed,
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Get.back();
           },
@@ -67,7 +67,7 @@ class EditProfileController extends GetxController {
             context: context,
             message: ManagerStrings.editNameSuccess,
             title: ManagerStrings.thanks,
-            stateRenderType: StateRenderType.popupSuccess,
+            stateRenderType: StateRenderType.popUpSuccessState,
             retryAction: () {
               Get.back();
             });
@@ -81,7 +81,7 @@ class EditProfileController extends GetxController {
         context: context,
         message: ManagerStrings.loading,
         title: "",
-        stateRenderType: StateRenderType.popupLoadingState,
+        stateRenderType: StateRenderType.popUpLoadingState,
         retryAction: () {});
     (await editPhoneUseCase.execute(EditPhoneRequest(phone: phone.text))).fold(
       (l) {
@@ -90,7 +90,7 @@ class EditProfileController extends GetxController {
           context: context,
           message: l.message,
           title: ManagerStrings.editPhoneFailed,
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Get.back();
           },
@@ -102,7 +102,7 @@ class EditProfileController extends GetxController {
             context: context,
             message: ManagerStrings.editPhoneSuccess,
             title: ManagerStrings.thanks,
-            stateRenderType: StateRenderType.popupSuccess,
+            stateRenderType: StateRenderType.popUpSuccessState,
             retryAction: () {
               Get.back();
             });

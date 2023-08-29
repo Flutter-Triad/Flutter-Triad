@@ -1,10 +1,10 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/features/notifications/domain/usecase/notifications_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../config/dependency_injection.dart';
 import '../../../../core/internet_checker/interent_checker.dart';
-import '../../../../core/state_renderer/state_renderer.dart';
 import '../../domain/model/notification_model.dart';
 
 class NotificationsController extends GetxController {
@@ -24,7 +24,7 @@ class NotificationsController extends GetxController {
         context: context,
         message: ManagerStrings.NO_INTERNT_CONNECTION,
         title: '',
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Navigator.of(context).pop();
         },
@@ -42,7 +42,7 @@ class NotificationsController extends GetxController {
           context: context,
           message: l.message.toString(),
           title: '',
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Navigator.of(context).pop();
           },

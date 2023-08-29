@@ -1,9 +1,9 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
 import 'package:flutter_triad/features/profile/domain/usecase/balance_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../config/dependency_injection.dart';
-import '../../../../core/state_renderer/state_renderer.dart';
 
 class SettingsController extends GetxController {
   bool value = false;
@@ -18,7 +18,7 @@ class SettingsController extends GetxController {
           context: context,
           message: l.message.toString(),
           title: '',
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Get.back();
             Get.back();

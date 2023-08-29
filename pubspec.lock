@@ -371,6 +371,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.9.0"
+  flutter_state_render_dialog:
+    dependency: "direct main"
+    description:
+      name: flutter_state_render_dialog
+      sha256: d75c7e57c926d8f405db280a32d5324f0d23edc836c163cedfecdc4263d81779
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   flutter_svg:
     dependency: "direct main"
     description:

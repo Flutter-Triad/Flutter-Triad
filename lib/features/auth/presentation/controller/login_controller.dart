@@ -1,10 +1,9 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
-import 'package:flutter_triad/core/state_renderer/state_renderer.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
-import 'package:flutter_triad/features/auth/data/request/fvm_token_request.dart';
 import 'package:flutter_triad/features/auth/domain/usecase/fcm_token_usecase.dart';
 import 'package:flutter_triad/features/auth/domain/usecase/login_usecase.dart';
 import 'package:flutter_triad/features/verification/presentation/controller/verification_controller.dart';
@@ -46,7 +45,7 @@ class LoginController extends GetxController {
         context: context,
         message: ManagerStrings.loading,
         title: "",
-        stateRenderType: StateRenderType.popupLoadingState,
+        stateRenderType: StateRenderType.popUpLoadingState,
         retryAction: () {});
 
     (await _loginUseCase.execute(
@@ -57,7 +56,7 @@ class LoginController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.loginFailed,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () async {
           Get.back();
           if (l.code == ResponseCode.UNVERIFIED_USER) {
@@ -81,7 +80,7 @@ class LoginController extends GetxController {
           context: context,
           message: ManagerStrings.loginSuccess,
           title: ManagerStrings.thanks,
-          stateRenderType: StateRenderType.popupSuccess,
+          stateRenderType: StateRenderType.popUpSuccessState,
           retryAction: () {
             Navigator.of(context).pop();
             Get.back();
