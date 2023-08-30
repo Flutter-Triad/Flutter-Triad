@@ -232,6 +232,7 @@ finishRegister() {
   if (GetIt.I.isRegistered<RegisterUseCase>()) {
     instance.unregister<RegisterUseCase>();
   }
+  Get.delete<RegisterController>();
 }
 
 initForgetPassword() async {
