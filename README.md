@@ -100,12 +100,12 @@ To launch the app on your default emulator or connected device, use the followin
 ## New Feature 
 For create a new feature use this commands:
    ```bash
-   fvm dart command_file_path -f feature_name -n dart_file_name.dart 
+   dart command_file_path -f feature_name -n dart_file_name.dart 
    ```
 
    // Ex: 
    ```bash
-   fvm dart lib/core/commands/custom_command.dart -f product -n product.dart 
+   dart lib/core/commands/custom_command.dart -f product -n product.dart 
    ```
 
 # Project Structure
