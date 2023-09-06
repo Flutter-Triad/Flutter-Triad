@@ -8,7 +8,7 @@ import '../../../../core/resources/manager_strings.dart';
 import '../../../../routes/routes.dart';
 
 class ForgetPasswordController extends GetxController {
-  ForgetPasswordUseCase _useCase = instance<ForgetPasswordUseCase>();
+  final ForgetPasswordUseCase _useCase = instance<ForgetPasswordUseCase>();
   late TextEditingController email;
   var formKey = GlobalKey<FormState>();
 
@@ -61,7 +61,7 @@ class ForgetPasswordController extends GetxController {
             retryAction: () {
               Get.back();
               Get.offNamed(
-                Routes.reset_password,
+                Routes.resetPassword,
               );
             });
       } else {
