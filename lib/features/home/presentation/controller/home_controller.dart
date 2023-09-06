@@ -69,13 +69,7 @@ class HomeController extends GetxController {
     changeMainCurrentIndex(1);
   }
 
-  setCurrentCourseId(int id) {
-    cacheData.setCourseId(id);
-  }
 
-  setCurrentResourceId(int id) {
-    cacheData.setResourceId(id);
-  }
 
   void selectCategory(int index) {
     selectedCategoryIndex = index;

@@ -26,12 +26,14 @@ class ErrorHandler implements Exception {
 
       if (response?.statusCode == ResponseCode.UNAUTHORISED) {
         Future.delayed(
-            Duration(
-              seconds: Constants.sessionFinishedDuration,
-            ), () {
-          _appSettings.removeCachedUserData();
-          Get.offAllNamed(Routes.login);
-        });
+          const Duration(
+            seconds: Constants.sessionFinishedDuration,
+          ),
+          () {
+            _appSettings.removeCachedUserData();
+            Get.offAllNamed(Routes.login);
+          },
+        );
         failure = Failure(
           response!.statusCode.onNull(),
           ManagerStrings.sessionFinished,
@@ -42,9 +44,15 @@ class ErrorHandler implements Exception {
             data[Constants.errors].values.first.first ??
             Constants.error;
 
-        failure = Failure(statusCode, errorMessage);
+        failure = Failure(
+          statusCode,
+          errorMessage,
+        );
       } else {
-        failure = Failure(statusCode, Constants.error);
+        failure = Failure(
+          statusCode,
+          Constants.error,
+        );
       }
     } else {
       failure = TypeHandler.UNKNOWN.getFailure();

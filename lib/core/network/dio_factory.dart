@@ -20,10 +20,10 @@ class DioFactory {
     dio.options = BaseOptions(
       baseUrl: Constants.baseUrl,
       headers: headers,
-      receiveTimeout: Duration(
+      receiveTimeout: const Duration(
         seconds: Constants.sendTimeOutDuration,
       ),
-      sendTimeout: Duration(
+      sendTimeout: const Duration(
         seconds: Constants.receiveTimeOutDuration,
       ),
     );
@@ -37,7 +37,9 @@ class DioFactory {
         return handler.next(options);
       },
     );
-    dio.interceptors.add(authInterceptor);
+    dio.interceptors.add(
+      authInterceptor,
+    );
 
     if (!kReleaseMode) {
       dio.interceptors.add(
