@@ -10,7 +10,6 @@ class LocaleController extends GetxController {
 
   changeLanguage(String langCode) {
     Locale locale = Locale(langCode);
-    // _appSettingsPrefs.setLocale(langCode);
     Get.updateLocale(locale);
   }
 
