@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart' show CupertinoIcons;
+import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
 import 'dart:io' show Platform;
-
 import '../resources/manager_colors.dart';
 import '../resources/manager_icons.dart';
 
@@ -31,7 +30,7 @@ class IconService {
     return Icon(
       getPlatformIcon(icon),
       color: color ?? ManagerColors.white,
-      size: iconSize ?? 20,
+      size: iconSize ?? ManagerIconSize.s20,
     );
   }
 }
