@@ -122,6 +122,7 @@ initModule() async {
 
   AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
 
+  // ToDo: implement notifications
   if (_appSettings.getEnableNotifications()) {
     // await initFirebaseNotification();
   }
