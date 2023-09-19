@@ -388,9 +388,6 @@ class ManagerStrings {
 
   static String get subscriptNow => tr('subscriptNow');
 
-  static String get applicationUrl =>
-      tr('https://github.com/Flutter-Triad/Flutter-Triad');
-
   static String get yes => tr('yes');
 
   static String get no => tr('no');
