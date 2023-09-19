@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
@@ -13,7 +14,9 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // _appSettingsPrefs.clear();
+    if(kDebugMode){
+      // _appSettingsPrefs.clear();
+    }
     Future.delayed(
       const Duration(
         seconds: Constants.splashTimeSecond,
