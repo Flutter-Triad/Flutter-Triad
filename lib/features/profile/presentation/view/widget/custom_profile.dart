@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
 import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
 import 'package:flutter_triad/core/resources/manager_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomProfile extends StatelessWidget {
   final String imagePath;
@@ -38,11 +38,11 @@ class CustomProfile extends StatelessWidget {
                 fontSize: ManagerFontSize.s16,
                 color: ManagerColors.textColorProfile),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: EdgeInsets.only(
                 right: ManagerWidth.w10, left: ManagerWidth.w10),
-            child: InkWell(
+            child: const InkWell(
               child: Icon(Icons.arrow_forward_ios_rounded),
             ),
           )

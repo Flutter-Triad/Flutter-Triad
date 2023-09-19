@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
 import 'package:flutter_triad/core/resources/manager_assets.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
@@ -29,12 +28,12 @@ class CustomPhoto extends StatelessWidget {
           ),
         ),
         Visibility(
-          visible:visible ,
+          visible: visible,
           child: Positioned(
             top: ManagerHeight.h80,
             child: CircleAvatar(
               radius: ManagerRadius.r50,
-              backgroundImage: AssetImage(ManagerAssets.person),
+              backgroundImage: const AssetImage(ManagerAssets.person),
             ),
           ),
         ),
