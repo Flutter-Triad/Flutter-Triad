@@ -126,6 +126,7 @@ initModule() async {
   LocaleController localeController = LocaleController();
   localeController.changeLanguage(_appSettings.getLocale());
 
+  // ToDo: implement notifications
   if (_appSettings.getEnableNotifications()) {
     // await initFirebaseNotification();
   }
