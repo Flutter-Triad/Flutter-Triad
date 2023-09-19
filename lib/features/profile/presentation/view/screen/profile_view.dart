@@ -8,7 +8,6 @@ import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/routes/routes.dart';
 import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
-
 import '../../controller/profile_controller.dart';
 import '../widget/custom_photo.dart';
 import '../widget/custom_profile.dart';
@@ -58,7 +57,7 @@ class ProfileView extends StatelessWidget {
                       CustomProfile(
                         imagePath: ManagerAssets.userProfile,
                         textName: ManagerStrings.editProfile,
-                        onTap: () => Get.toNamed(Routes.edit_profile),
+                        onTap: () => Get.toNamed(Routes.editProfile),
                       ),
                       const Divider(),
                       CustomProfile(
@@ -70,8 +69,13 @@ class ProfileView extends StatelessWidget {
                       CustomProfile(
                           imagePath: ManagerAssets.send,
                           textName: ManagerStrings.share,
+
                           onTap: () =>
                               Share.share(ManagerStrings.applicationUrl)),
+
+                          onTap: () async {
+                            // await Share.share(ManagerStrings.applicationUrl);
+                          }),
                       const Divider(),
                       CustomProfile(
                           imagePath: ManagerAssets.stars,

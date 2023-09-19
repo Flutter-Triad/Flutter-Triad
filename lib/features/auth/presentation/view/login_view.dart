@@ -117,7 +117,7 @@ class LoginView extends StatelessWidget {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  Get.toNamed(Routes.forget_password);
+                                  Get.toNamed(Routes.forgetPassword);
                                 },
                                 child: Text(
                                   ManagerStrings.forgetPassword,

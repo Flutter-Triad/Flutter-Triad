@@ -55,7 +55,7 @@ class ChangePassView extends StatelessWidget {
               padding: EdgeInsets.only(top: ManagerHeight.h100),
               child: Container(
                 width: double.infinity,
-                height: ManagerHeight.h300,
+                height: ManagerHeight.h340,
                 margin: EdgeInsets.symmetric(
                     horizontal: ManagerWidth.w30, vertical: ManagerHeight.h30),
                 padding: EdgeInsets.symmetric(

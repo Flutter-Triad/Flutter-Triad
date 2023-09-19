@@ -37,7 +37,9 @@ class DioFactory {
         return handler.next(options);
       },
     );
-    dio.interceptors.add(authInterceptor);
+    dio.interceptors.add(
+      authInterceptor,
+    );
 
     if (!kReleaseMode) {
       dio.interceptors.add(

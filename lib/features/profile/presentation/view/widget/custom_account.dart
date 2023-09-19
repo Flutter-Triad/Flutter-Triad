@@ -50,7 +50,7 @@ class CustomAccount extends StatelessWidget {
             ),
             child: InkWell(
               onTap: () {
-                Get.toNamed(Routes.change_password);
+                Get.toNamed(Routes.changePassword);
               },
               child: Row(
                 children: [
@@ -77,7 +77,7 @@ class CustomAccount extends StatelessWidget {
                   const Spacer(),
                   InkWell(
                     onTap: () {
-                      Get.toNamed(Routes.change_password);
+                      Get.toNamed(Routes.changePassword);
                     },
                     child: const Icon(Icons.arrow_forward_ios_rounded),
                   )

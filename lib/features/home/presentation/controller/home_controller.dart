@@ -1,7 +1,7 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
-import 'package:flutter_triad/core/state_renderer/state_renderer.dart';
 import 'package:flutter_triad/features/home/domain/model/images_model.dart';
 import 'package:flutter_triad/features/home/domain/usecase/images_usecase.dart';
 import 'package:flutter_triad/features/main/presentation/controller/main_controller.dart';
@@ -69,13 +69,7 @@ class HomeController extends GetxController {
     changeMainCurrentIndex(1);
   }
 
-  setCurrentCourseId(int id) {
-    cacheData.setCourseId(id);
-  }
 
-  setCurrentResourceId(int id) {
-    cacheData.setResourceId(id);
-  }
 
   void selectCategory(int index) {
     selectedCategoryIndex = index;
@@ -91,7 +85,7 @@ class HomeController extends GetxController {
         context: context,
         message: ManagerStrings.NO_INTERNT_CONNECTION,
         title: '',
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Navigator.of(context).pop();
         },
@@ -109,7 +103,7 @@ class HomeController extends GetxController {
           context: context,
           message: l.message.toString(),
           title: '',
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Navigator.of(context).pop();
           },

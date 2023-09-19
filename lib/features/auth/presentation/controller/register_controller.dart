@@ -1,6 +1,6 @@
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
-import 'package:flutter_triad/core/state_renderer/state_renderer.dart';
 import 'package:flutter_triad/features/auth/domain/usecase/register_usecase.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +42,7 @@ class RegisterController extends GetxController {
             context: context,
             message: ManagerStrings.shouldAgreeTerms,
             title: ManagerStrings.error,
-            stateRenderType: StateRenderType.popupErrorState,
+            stateRenderType: StateRenderType.popUpErrorState,
             retryAction: () {
               Get.back();
             });
@@ -59,7 +59,7 @@ class RegisterController extends GetxController {
         context: context,
         message: ManagerStrings.loading,
         title: '',
-        stateRenderType: StateRenderType.popupLoadingState,
+        stateRenderType: StateRenderType.popUpLoadingState,
         retryAction: () {});
     (await _registerUseCase.execute(RegisterUseCaseInput(
             fullName: fullName.text,
@@ -74,7 +74,7 @@ class RegisterController extends GetxController {
           context: context,
           message: l.message,
           title: ManagerStrings.registerFailed,
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Get.back();
           },
@@ -86,7 +86,7 @@ class RegisterController extends GetxController {
             context: context,
             message: ManagerStrings.registerSuccess,
             title: ManagerStrings.thanks,
-            stateRenderType: StateRenderType.popupSuccess,
+            stateRenderType: StateRenderType.popUpSuccessState,
             retryAction: () {
               Get.back();
               Get.toNamed(Routes.verification);
