@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/core/resources/manager_assets.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
@@ -5,9 +6,9 @@ import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/routes/routes.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
+
 import '../../controller/profile_controller.dart';
 import '../widget/custom_photo.dart';
 import '../widget/custom_profile.dart';
@@ -33,7 +34,7 @@ class ProfileView extends StatelessWidget {
           builder: (controller) {
             return ListView(
               children: [
-                CustomPhoto(visible: false),
+                const CustomPhoto(visible: false),
                 SizedBox(
                   height: ManagerHeight.h20,
                 ),
@@ -41,7 +42,7 @@ class ProfileView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: ManagerColors.backgroundForm,
                     borderRadius: BorderRadius.circular(ManagerRadius.r10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: ManagerColors.greyLight,
                         offset: Offset(0.0, 2.0),
@@ -59,28 +60,27 @@ class ProfileView extends StatelessWidget {
                         textName: ManagerStrings.editProfile,
                         onTap: () => Get.toNamed(Routes.edit_profile),
                       ),
-                      Divider(),
+                      const Divider(),
                       CustomProfile(
                         imagePath: ManagerAssets.setting,
                         textName: ManagerStrings.setting,
                         onTap: () => Get.toNamed(Routes.setting),
                       ),
-                      Divider(),
+                      const Divider(),
                       CustomProfile(
                           imagePath: ManagerAssets.send,
                           textName: ManagerStrings.share,
-                          onTap: () async {
-                            // await Share.share(ManagerStrings.applicationUrl);
-                          }),
-                      Divider(),
+                          onTap: () =>
+                              Share.share(ManagerStrings.applicationUrl)),
+                      const Divider(),
                       CustomProfile(
                           imagePath: ManagerAssets.stars,
                           textName: ManagerStrings.rates),
-                      Divider(),
+                      const Divider(),
                       CustomProfile(
                           imagePath: ManagerAssets.documentBlack,
                           textName: ManagerStrings.document),
-                      Divider(),
+                      const Divider(),
                       CustomProfile(
                         imagePath: ManagerAssets.logout,
                         textName: ManagerStrings.logout,
