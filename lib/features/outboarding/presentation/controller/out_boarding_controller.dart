@@ -9,7 +9,7 @@ import '../../../../core/resources/manager_strings.dart';
 import '../view/widget/out_boarding_item.dart';
 
 class OutBoardingController extends GetxController {
-  AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
+  final AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
   List outBoardingItems = [
     OutBoardingItem(
       title: ManagerStrings.outBoardingTitle1,
@@ -81,7 +81,7 @@ class OutBoardingController extends GetxController {
   }
 
   void setButtonText() {
-    buttonNextText = currentPage == lastPage
+    buttonNextText = isLastPage()
         ? ManagerStrings.startButton
         : ManagerStrings.continueButton;
   }
@@ -104,5 +104,9 @@ class OutBoardingController extends GetxController {
 
   bool showBackButton() {
     return currentPage > firstPage && currentPage < lastPage;
+  }
+
+  bool isLastPage() {
+    return currentPage == lastPage;
   }
 }
