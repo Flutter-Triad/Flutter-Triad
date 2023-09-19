@@ -1,4 +1,5 @@
 // Core imports
+import 'package:flutter_triad/core/locale/locale_controller.dart';
 import 'package:flutter_triad/features/auth/data/repository_impl/fcm_token_repository_impl.dart';
 import 'package:flutter_triad/features/auth/domain/repository/fcm_token_repository.dart';
 import 'package:flutter_triad/features/auth/presentation/controller/register_controller.dart';
@@ -122,6 +123,9 @@ initModule() async {
 
   AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
 
+  LocaleController localeController = LocaleController();
+  localeController.changeLanguage(_appSettings.getLocale());
+
   // ToDo: implement notifications
   if (_appSettings.getEnableNotifications()) {
     // await initFirebaseNotification();
@@ -129,7 +133,7 @@ initModule() async {
 
   if (!GetIt.I.isRegistered<NetworkInfo>()) {
     instance.registerLazySingleton<NetworkInfo>(
-        () => NetworkInfoImp(InternetConnectionCheckerPlus()));
+        () => NetworkInfoImp(InternetConnection()));
   }
   if (!GetIt.I.isRegistered<DioFactory>()) {
     instance.registerLazySingleton<DioFactory>(() => DioFactory());
@@ -355,7 +359,6 @@ disposeVerifyEmail() async {
 initMainModule() {
   Get.put<MainController>(MainController());
   initHome();
-
 }
 
 initHome() async {
@@ -443,7 +446,6 @@ disposeProfile() {
 finishProfile() {
   Get.delete<ProfileController>();
 }
-
 
 initCourse() {
   initProfile();

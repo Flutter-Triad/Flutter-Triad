@@ -11,7 +11,7 @@ extension NonNullString on String? {
 extension NonNullLocale on String? {
   String pareWithDefaultLocale() {
     if (this == null) {
-      return 'ar';
+      return 'en';
     } else {
       return this!;
     }
