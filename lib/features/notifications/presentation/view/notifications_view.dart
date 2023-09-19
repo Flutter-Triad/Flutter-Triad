@@ -4,7 +4,6 @@ import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/features/notifications/domain/model/notification_model.dart';
 import 'package:flutter_triad/features/notifications/presentation/controller/notifications_controller.dart';
 import 'package:get/get.dart';
-
 import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_fonts.dart';
 import '../../../../core/resources/manager_sizes_util.dart';
@@ -46,7 +45,7 @@ class _NotificationsViewState extends State<NotificationsView> {
               controller.performRefresh();
             },
             child: controller.isLoading == 0
-                ? ShimmerList()
+                ? const ShimmerList()
                 : controller.notifications.isNotEmpty
                     ? ListView(
                         children: [
@@ -60,7 +59,6 @@ class _NotificationsViewState extends State<NotificationsView> {
                                     shrinkWrap: true,
                                     physics: const ScrollPhysics(),
                                     itemCount: controller.notifications.length,
-                                    //controller.notifications.length,
                                     itemBuilder: (context, index) {
                                       NotificationModel notificationItem =
                                           controller.notifications[index];
@@ -78,8 +76,8 @@ class _NotificationsViewState extends State<NotificationsView> {
                     : Center(
                         child: Text(
                           ManagerStrings.thereAreNoNotificationsNow,
-                          style: getMediumTextStyle(
-                            fontSize: ManagerFontSize.s26,
+                          style: getRegularTextStyle(
+                            fontSize: ManagerFontSize.s20,
                             color: ManagerColors.black,
                           ),
                         ),
