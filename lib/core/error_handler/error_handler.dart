@@ -1,9 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_triad/config/constants.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+
 import '../../routes/routes.dart';
 import '../resources/manager_strings.dart';
 

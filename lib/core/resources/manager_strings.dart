@@ -388,8 +388,6 @@ class ManagerStrings {
 
   static String get subscriptNow => tr('subscriptNow');
 
-  static String get applicationUrl => tr('applicationUrl');
-
   static String get yes => tr('yes');
 
   static String get no => tr('no');
@@ -436,6 +434,6 @@ class ManagerStrings {
   static String get thereAreNoUpcomingReservations =>
       tr('thereAreNoUpcomingReservations');
 
-  static String get thereAreNoNotificationsNow => tr('thereAreNoNotificationsNow');
-
+  static String get thereAreNoNotificationsNow =>
+      tr('thereAreNoNotificationsNow');
 }

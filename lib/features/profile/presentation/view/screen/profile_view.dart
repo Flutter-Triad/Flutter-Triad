@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_triad/config/constants.dart';
 import 'package:flutter_triad/core/resources/manager_assets.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
@@ -5,8 +7,9 @@ import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/routes/routes.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
+
 import '../../controller/profile_controller.dart';
 import '../widget/custom_photo.dart';
 import '../widget/custom_profile.dart';
@@ -68,9 +71,7 @@ class ProfileView extends StatelessWidget {
                       CustomProfile(
                           imagePath: ManagerAssets.send,
                           textName: ManagerStrings.share,
-                          onTap: () async {
-                            // await Share.share(ManagerStrings.applicationUrl);
-                          }),
+                          onTap: () => Share.share(Constants.applicationUrl)),
                       const Divider(),
                       CustomProfile(
                           imagePath: ManagerAssets.stars,

@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_triad/core/resources/manager_assets.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
@@ -5,9 +8,6 @@ import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/features/profile/presentation/controller/settings_controller.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class CustomNotification extends StatelessWidget {
@@ -16,7 +16,7 @@ class CustomNotification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ManagerHeight.h100,
+      height: ManagerHeight.h105,
       margin: EdgeInsets.symmetric(
         horizontal: ManagerWidth.w16,
         vertical: ManagerHeight.h10,
@@ -26,7 +26,7 @@ class CustomNotification extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           ManagerRadius.r16,
         ),
-        boxShadow: <BoxShadow>[
+        boxShadow: const <BoxShadow>[
           BoxShadow(
             color: ManagerColors.greyLight,
             offset: Offset(0.0, 2.0),
@@ -45,13 +45,13 @@ class CustomNotification extends StatelessWidget {
               ),
               child: Text(
                 ManagerStrings.notifications,
-                style: getMediumTextStyle(
+                style: getRegularTextStyle(
                   fontSize: ManagerFontSize.s16,
                   color: ManagerColors.black,
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: EdgeInsets.only(
                 left: ManagerWidth.w14,
@@ -71,7 +71,7 @@ class CustomNotification extends StatelessWidget {
                         fontSize: ManagerFontSize.s16,
                         color: ManagerColors.textColorProfile),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GetBuilder<SettingsController>(builder: (controller) {
                     return Transform.scale(
                       scale: 0.8,

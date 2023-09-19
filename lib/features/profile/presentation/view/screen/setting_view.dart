@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/features/profile/presentation/view/widget/custom_account.dart';
 import 'package:flutter_triad/features/profile/presentation/view/widget/custom_general.dart';
 import 'package:flutter_triad/features/profile/presentation/view/widget/custom_notification.dart';
-import 'package:flutter/material.dart';
 
 class SettingView extends StatefulWidget {
   const SettingView({super.key});
@@ -24,7 +24,7 @@ class _SettingViewState extends State<SettingView> {
       appBar: AppBar(
         backgroundColor: ManagerColors.primaryColor,
         centerTitle: true,
-        iconTheme: IconThemeData(color: ManagerColors.white),
+        iconTheme: const IconThemeData(color: ManagerColors.white),
         title: Text(
           ManagerStrings.setting,
           style: getMediumTextStyle(
@@ -39,17 +39,17 @@ class _SettingViewState extends State<SettingView> {
                 height: ManagerHeight.h60,
                 color: ManagerColors.primaryColor,
               ),
-              CustomNotification(),
+              const CustomNotification(),
             ],
           ),
           SizedBox(
             height: ManagerHeight.h20,
           ),
-          CustomGeneral(),
+          const CustomGeneral(),
           SizedBox(
             height: ManagerHeight.h20,
           ),
-          CustomAccount()
+          const CustomAccount()
         ],
       ),
     );

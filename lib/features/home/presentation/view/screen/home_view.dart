@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
@@ -6,8 +7,8 @@ import 'package:flutter_triad/core/widgets/pop_cope_widget.dart';
 import 'package:flutter_triad/features/home/presentation/controller/home_controller.dart';
 import 'package:flutter_triad/features/home/presentation/view/widget/custom_banner.dart';
 import 'package:flutter_triad/features/home/presentation/view/widget/custom_text.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../../core/widgets/error_container.dart';
 import '../../../../../core/widgets/shimmer/shimmer_resource_list.dart';
 import '../widget/home_app_bar.dart';
@@ -58,19 +59,19 @@ class HomeView extends StatelessWidget {
                             height: ManagerHeight.h400,
                             child: controller.isLoading == 1
                                 ? ListView.builder(
-                                    itemCount:
-                                        controller.imagesModel.images!.length.onNull(),
+                                    itemCount: controller
+                                        .imagesModel.images.length
+                                        .onNull(),
                                     scrollDirection: Axis.vertical,
                                     itemBuilder: (context, index) {
                                       return resourceItem(
                                         controller,
                                         index,
-                                        () {
-                                        },
+                                        () {},
                                       );
                                     },
                                   )
-                                : ShimmerResourceList(),
+                                : const ShimmerResourceList(),
                           ),
                           SizedBox(
                             height: ManagerHeight.h20,

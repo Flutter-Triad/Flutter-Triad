@@ -1,10 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../../../config/constants.dart';
-import '../../../../core/base_response/base_response.dart';
 
 part 'profile_attributes_response.g.dart';
+
 @JsonSerializable()
-class ProfileAttributesResponse  {
+class ProfileAttributesResponse {
   @JsonKey(name: ResponseConstants.name)
   String? name;
   @JsonKey(name: ResponseConstants.email)
