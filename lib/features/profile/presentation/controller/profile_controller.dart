@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
 import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
@@ -10,7 +12,6 @@ import 'package:get/get.dart';
 
 import '../../../../config/dependency_injection.dart';
 import '../../../../core/resources/manager_strings.dart';
-import '../../../../core/state_renderer/state_renderer.dart';
 import '../../../../core/storage/local/app_settings_prefs.dart';
 import '../../../../routes/routes.dart';
 
@@ -28,7 +29,7 @@ class ProfileController extends GetxController {
         context: context,
         message: ManagerStrings.loading,
         title: "",
-        stateRenderType: StateRenderType.popupLoadingState,
+        stateRenderType: StateRenderType.popUpLoadingState,
         retryAction: () {});
     (await _editPasswordUseCase.execute(EditPasswordRequest(
             password: newPassController.text,
@@ -39,7 +40,7 @@ class ProfileController extends GetxController {
         context: context,
         message: l.message,
         title: ManagerStrings.editPassFailed,
-        stateRenderType: StateRenderType.popupErrorState,
+        stateRenderType: StateRenderType.popUpErrorState,
         retryAction: () {
           Get.back();
         },
@@ -50,7 +51,7 @@ class ProfileController extends GetxController {
           context: context,
           message: ManagerStrings.editPassSuccess,
           title: ManagerStrings.thanks,
-          stateRenderType: StateRenderType.popupSuccess,
+          stateRenderType: StateRenderType.popUpSuccessState,
           retryAction: () {
             Get.back();
           });
@@ -64,7 +65,7 @@ class ProfileController extends GetxController {
         context: context,
         message: ManagerStrings.loading,
         title: "",
-        stateRenderType: StateRenderType.popupLoadingState,
+        stateRenderType: StateRenderType.popUpLoadingState,
         retryAction: () {});
     (await _logoutUseCase.execute()).fold(
       (l) {
@@ -73,7 +74,7 @@ class ProfileController extends GetxController {
           context: context,
           message: l.message,
           title: ManagerStrings.logoutFailed,
-          stateRenderType: StateRenderType.popupErrorState,
+          stateRenderType: StateRenderType.popUpErrorState,
           retryAction: () {
             Get.back();
           },
@@ -96,7 +97,7 @@ class ProfileController extends GetxController {
                     context: context,
                     message: ManagerStrings.thanks,
                     title: ManagerStrings.logoutSuccess,
-                    stateRenderType: StateRenderType.popupSuccess,
+                    stateRenderType: StateRenderType.popUpSuccessState,
                     retryAction: () {
                       Get.offAllNamed(Routes.login);
                     },
@@ -106,7 +107,7 @@ class ProfileController extends GetxController {
                     context: context,
                     message: '',
                     title: ManagerStrings.logoutFailed,
-                    stateRenderType: StateRenderType.popupErrorState,
+                    stateRenderType: StateRenderType.popUpErrorState,
                     retryAction: () {
                       Get.back();
                     },

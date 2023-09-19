@@ -23,14 +23,14 @@ class Routes {
   static const String login = '/login_view';
   static const String register = '/register_view';
   static const String home = '/home_view';
-  static const String forget_password = '/forget_password_view';
+  static const String forgetPassword = '/forgetPassword';
   static const String verification = '/verification_view';
   static const String main = '/main_view';
   static const String setting = '/setting_view';
   static const String search = '/search_view';
-  static const String edit_profile = '/edit_profile_view';
-  static const String change_password = '/change_password_view';
-  static const String reset_password = '/reset_password';
+  static const String editProfile = '/editProfile';
+  static const String changePassword = '/changePassword';
+  static const String resetPassword = '/resetPassword';
   static const String localeView = '/locale_view';
   static const String notifications = '/notifications';
 }
@@ -50,7 +50,7 @@ class RouteGenerator {
       case Routes.register:
         initRegisterModule();
         return MaterialPageRoute(builder: (_) => RegisterView());
-      case Routes.forget_password:
+      case Routes.forgetPassword:
         initForgetPassword();
         return MaterialPageRoute(builder: (_) => ForgetPassView());
       case Routes.home:
@@ -66,14 +66,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SettingView());
       case Routes.search:
         return MaterialPageRoute(builder: (_) => SearchView());
-      case Routes.edit_profile:
-        initEditName();
-        initEditPhone();
+      case Routes.editProfile:
         initProfile();
         return MaterialPageRoute(builder: (_) => EditProfileView());
-      case Routes.change_password:
+      case Routes.changePassword:
         return MaterialPageRoute(builder: (_) => ChangePassView());
-      case Routes.reset_password:
+      case Routes.resetPassword:
         initResetPasswordModule();
         return MaterialPageRoute(builder: (_) => ResetPasswordView());
       case Routes.localeView:

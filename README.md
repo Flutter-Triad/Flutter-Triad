@@ -1,31 +1,87 @@
 # Flutter Triad
 
-## Description
+![Flutter Triad Logo](https://flutter-triad.actit.ps/assets/img/logo.svg)
 
-Flutter Triad is a clean architecture-based template that supports and helps developers speed up building their apps. This template provides a structured and organized architecture that separates concerns and promotes maintainability and scalability. You can use it as a starting point to build your Flutter apps more efficiently, saving time and effort in setting up the project's architecture and structure.
+Flutter Triad is a clean architecture-based Flutter template designed to accelerate app development by providing a structured and organized project foundation. Whether you're building a new app or refactoring an existing one, Flutter Triad simplifies the development process, making it more efficient and maintainable.
 
-## About Us
+## Table of Contents
 
-We are a passionate team of developers dedicated to simplifying the app development process. Flutter Triad is one of our open-source projects aimed at helping the Flutter community create high-quality apps with ease. We believe in the power of clean architecture and best practices, and our goal is to share this knowledge with the community.
+- [Features](#features)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Project Structure](#project-structure)
+- [State Management](#state-management)
+- [Networking](#networking)
+- [Error Handling](#error-handling)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-If you have any questions, suggestions, or feedback, please feel free to reach out to us at [your email address].
+## Features
+
+- **Clean Architecture**: Flutter Triad follows a clean architecture pattern, separating the project into data, domain, and presentation layers. This promotes maintainability, scalability, and testability.
+
+- **State Management**: Choose your preferred state management solution, whether it's the built-in `Provider`, `GetX`, `Riverpod`, or any other state management library. Flutter Triad provides flexibility.
+
+- **Networking**: Simplify API requests using Retrofit and Dio. Use generated code to interact with your APIs efficiently.
+
+- **Error Handling**: Enjoy a built-in error handling system that seamlessly integrates with Dio, making it easy to handle errors throughout your app.
+
+- **Custom Code Generator**: Boost productivity with a custom code generator that automates the creation of feature-specific files and directories. Say goodbye to repetitive tasks.
+
+- **Responsive UI**: Flutter Triad includes `flutter_screenutil` for responsive UI design, making it easy to adapt your app to various screen sizes.
+
+- **Localization**: Use the `easy_localization` library to add multilingual support to your app with ease.
+
+- **Caching**: Implement data caching effortlessly with `flutter_cache_manager` and `path_provider`.
+
+- **Animations**: Enhance your app's user experience with animations using the `lottie` library.
+
+- **Custom UI Components**: Flutter Triad provides custom UI components and widgets to jumpstart your development.
+
+- **Navigation**: Implement persistent bottom navigation and smooth transitions between screens with `persistent_bottom_nav_bar_v2`.
 
 ## Getting Started
 
-To begin using the Flutter Triad App, follow these simple steps:
+### Prerequisites
 
-1. Ensure you have Flutter installed on your local development machine.
-2. Clone the project repository:
-3. Navigate to the project directory:
-4. Fetch the project dependencies by running one of the following commands:
-- If you're using the Flutter SDK directly:
-  ```
-  flutter pub get
-  ```
-- If you're using the Flutter Version Manager (FVM):
-  ```
-  fvm flutter pub get
-  ```
+Before you begin, ensure you have met the following requirements:
+
+- **Flutter**: Make sure you have Flutter installed on your machine. If not, you can [install Flutter here](https://flutter.dev/docs/get-started/install).
+
+- **Dart**: Flutter requires the Dart programming language. [Install Dart here](https://dart.dev/get-dart).
+
+### Installation
+
+To get started with Flutter Triad, follow these steps:
+
+1. Clone the repository:
+
+    ```bash
+   git clone https://github.com/your-username/Flutter-Triad.git
+    ```
+    Replace your-username with your GitHub username or the repository URL.
+
+2. Navigate to the project directory:
+
+    ```bash
+   cd Flutter-Triad
+    ```
+   
+3. Fetch the project dependencies:
+
+    ```bash
+   flutter pub get
+    ```
+   
+4. Run the app:
+
+   ```bash
+   flutter run 
+   ```
+   
+This will launch the app on your default emulator or connected device.
 
 5. If you're using models with the `@JsonSerializable()` annotation, generate the necessary serialization code by running:
 - If you're using the Flutter SDK directly:
@@ -36,15 +92,42 @@ To begin using the Flutter Triad App, follow these simple steps:
   ```
   fvm flutter pub run build_runner build --delete-conflicting-outputs
   ```
+Running the App
+To launch the app on your default emulator or connected device, use the following command:
+   ```bash
+   flutter run 
+   ```
+## New Feature 
+For create a new feature use this commands:
+   ```bash
+   dart command_file_path -f feature_name -n dart_file_name.dart 
+   ```
 
-6. To create a new feature, use the following command:
-   For example:
+   // Ex: 
+   ```bash
+   dart lib/core/commands/custom_command.dart -f product -n product.dart 
+   ```
 
-Please ensure that you have either the Flutter SDK or FVM installed on your machine before proceeding with the above steps.
+# Project Structure
+Flutter Triad follows a clean architecture pattern, organizing the project into the following layers:
 
-## Contributing
+- **data**: Contains data-related logic, including data sources, repositories, and models.
+- **domain**: Contains the core business logic, including use cases and entities.
+- **presentation**: Contains the UI-related logic, including views, controllers, and presenters.
 
-We welcome contributions to enhance the Flutter Triad App. To contribute, please follow these steps:
+This structure promotes separation of concerns, making your codebase more maintainable and testable.
+
+# State Management
+Flutter Triad is flexible when it comes to state management. You can choose your preferred state management solution, such as Provider, GetX, or Riverpod. The project is designed to work seamlessly with your choice.
+
+# Networking
+Simplify API requests with Retrofit and Dio. Use code generation to create network-related files, reducing boilerplate code. Retrofit and Dio integration makes working with APIs efficient and straightforward.
+
+# Error Handling
+Flutter Triad includes a built-in error handling system that seamlessly integrates with Dio. Handle errors gracefully and provide a smooth user experience even when things go wrong.
+
+# Contributing
+We welcome contributions to enhance Flutter Triad. To contribute, please follow these steps:
 
 1. Fork the repository on GitHub.
 2. Create a new branch with a descriptive name for your feature or bug fix.
@@ -52,12 +135,10 @@ We welcome contributions to enhance the Flutter Triad App. To contribute, please
 4. Commit and push your changes to your forked repository.
 5. Submit a pull request, explaining the changes made and their purpose.
 
-## License
+# License
+Flutter Triad is released under the MIT License.
 
-The Flutter Triad App is released under the [MIT License](LICENSE).
+# Contact
+If you have any questions, suggestions, or feedback, please feel free to reach out to our team at mohanned@ait.ps.
 
-## Contact
-
-If you have any questions, suggestions, or feedback, please don't hesitate to contact our team at [email protected]
-
-Thank you for choosing the Flutter Triad App! We hope it simplifies your daily tasks and enhances your productivity.
+**Thank you for choosing Flutter Triad. We hope it streamlines your app development and helps you create amazing Flutter apps!**

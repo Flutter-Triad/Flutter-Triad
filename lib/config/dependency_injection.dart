@@ -1,7 +1,6 @@
 // Core imports
 import 'package:flutter_triad/features/auth/data/repository_impl/fcm_token_repository_impl.dart';
 import 'package:flutter_triad/features/auth/domain/repository/fcm_token_repository.dart';
-import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/features/auth/presentation/controller/register_controller.dart';
 import 'package:flutter_triad/features/edit_profile/data/data_source/edit_name_remote_data_source.dart';
 import 'package:flutter_triad/features/edit_profile/data/data_source/edit_phone_remote_data_source.dart';
@@ -123,6 +122,7 @@ initModule() async {
 
   AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
 
+  // ToDo: implement notifications
   if (_appSettings.getEnableNotifications()) {
     // await initFirebaseNotification();
   }
@@ -232,6 +232,7 @@ finishRegister() {
   if (GetIt.I.isRegistered<RegisterUseCase>()) {
     instance.unregister<RegisterUseCase>();
   }
+  Get.delete<RegisterController>();
 }
 
 initForgetPassword() async {
@@ -355,8 +356,6 @@ initMainModule() {
   Get.put<MainController>(MainController());
   initHome();
 
-  disposeSubscriptionProcess();
-  disposeReservationProcess();
 }
 
 initHome() async {
@@ -403,6 +402,8 @@ finishHome() async {
 }
 
 initProfile() {
+  initEditName();
+  initEditPhone();
   initLogOut();
   initChangePassword();
 
@@ -443,14 +444,6 @@ finishProfile() {
   Get.delete<ProfileController>();
 }
 
-disposeReservationProcess() {
-  // ToDo: update This Line
-  CacheData().disposeHasPaymentMethods();
-}
-
-disposeSubscriptionProcess() {
-  CacheData().disposeHasPaymentMethods();
-}
 
 initCourse() {
   initProfile();
