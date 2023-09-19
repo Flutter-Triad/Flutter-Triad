@@ -1,23 +1,21 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/core/state_renderer/state_renderer.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
-import 'package:flutter_triad/features/auth/data/request/fvm_token_request.dart';
-import 'package:flutter_triad/features/auth/domain/usecase/fcm_token_usecase.dart';
 import 'package:flutter_triad/features/auth/domain/usecase/login_usecase.dart';
 import 'package:flutter_triad/features/verification/presentation/controller/verification_controller.dart';
 import 'package:flutter_triad/routes/routes.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../core/error_handler/error_handler.dart';
 
 class LoginController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   LoginUseCase _loginUseCase = instance<LoginUseCase>();
-  FcmTokenUseCase _fcmTokenUseCase = instance<FcmTokenUseCase>();
   AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
   var formKey = GlobalKey<FormState>();
   bool check = false;
