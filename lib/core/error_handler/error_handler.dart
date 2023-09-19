@@ -1,9 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_triad/config/constants.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+
 import '../../routes/routes.dart';
 import '../resources/manager_strings.dart';
 
@@ -16,7 +17,7 @@ class Failure {
 
 class ErrorHandler implements Exception {
   late Failure failure;
-  AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
+  final AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
 
   ErrorHandler.handle(dynamic error) {
     if (error is DioError) {
@@ -26,7 +27,7 @@ class ErrorHandler implements Exception {
 
       if (response?.statusCode == ResponseCode.UNAUTHORISED) {
         Future.delayed(
-            Duration(
+            const Duration(
               seconds: Constants.sessionFinishedDuration,
             ), () {
           _appSettings.removeCachedUserData();
