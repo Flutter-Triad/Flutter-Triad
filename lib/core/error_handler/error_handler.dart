@@ -17,7 +17,7 @@ class Failure {
 
 class ErrorHandler implements Exception {
   late Failure failure;
-  final AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
+  AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
 
   ErrorHandler.handle(dynamic error) {
     if (error is DioError) {
@@ -27,13 +27,6 @@ class ErrorHandler implements Exception {
 
       if (response?.statusCode == ResponseCode.UNAUTHORISED) {
         Future.delayed(
-            const Duration(
-              seconds: Constants.sessionFinishedDuration,
-            ), () {
-          _appSettings.removeCachedUserData();
-          Get.offAllNamed(Routes.login);
-        });
-
           const Duration(
             seconds: Constants.sessionFinishedDuration,
           ),
@@ -42,7 +35,6 @@ class ErrorHandler implements Exception {
             Get.offAllNamed(Routes.login);
           },
         );
-
         failure = Failure(
           response!.statusCode.onNull(),
           ManagerStrings.sessionFinished,

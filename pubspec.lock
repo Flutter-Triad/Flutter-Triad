@@ -765,23 +765,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.27.7"
-
-  scrollable_clean_calendar:
-    dependency: "direct main"
-    description:
-      name: scrollable_clean_calendar
-      sha256: "2a005dd1a0215f31ecba775b26f5360370e58acf3495d9d7b4816bb6bbcd71a4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.1"
-  scrollable_positioned_list:
-    dependency: transitive
-    description:
-      name: scrollable_positioned_list
-      sha256: "1b54d5f1329a1e263269abc9e2543d90806131aa14fe7c6062a8054d57249287"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.8"
   share_plus:
     dependency: "direct main"
     description:
