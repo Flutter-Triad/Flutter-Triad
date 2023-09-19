@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/cache/cache.dart';
@@ -9,15 +8,15 @@ import 'package:flutter_triad/features/auth/domain/usecase/fcm_token_usecase.dar
 import 'package:flutter_triad/features/auth/domain/usecase/login_usecase.dart';
 import 'package:flutter_triad/features/verification/presentation/controller/verification_controller.dart';
 import 'package:flutter_triad/routes/routes.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../core/error_handler/error_handler.dart';
 
 class LoginController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  LoginUseCase _loginUseCase = instance<LoginUseCase>();
-  AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
+  final LoginUseCase _loginUseCase = instance<LoginUseCase>();
+  final AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
   var formKey = GlobalKey<FormState>();
   bool check = false;
   bool isObscurePassword = true;
@@ -68,13 +67,6 @@ class LoginController extends GetxController {
         },
       );
     }, (r) async {
-      // var fcmToken = await FirebaseMessaging.instance.getToken();
-      //
-      // _fcmTokenUseCase.execute(
-      //   FcmTokenRequest(
-      //     fcmToken: fcmToken.onNull(),
-      //   ),
-      // );
       Get.back();
       dialogRender(
           context: context,
@@ -102,7 +94,6 @@ class LoginController extends GetxController {
   void dispose() {
     email.dispose();
     password.dispose();
-    formKey.currentState!.dispose();
     super.dispose();
   }
 }

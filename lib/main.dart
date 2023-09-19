@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       splitScreenMode: true,
       minTextAdapt: true,
+      // Todo: Should by set design width and height
       designSize: const Size(
         Constants.deviceWidth,
         Constants.deviceHeight,
