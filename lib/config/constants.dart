@@ -1,18 +1,20 @@
 class Constants {
   static const String baseUrl = 'https://flutter-triad.actit.ps/';
   static const String prefKeyLocale = 'locale_key';
+  static const String applicationUrl =
+      'https://github.com/Flutter-Triad/Flutter-Triad';
   static const String prefKeyIsLoggedIn = 'is_logged_in_key';
   static const String prefOutBoardingViewedKey = 'out_boarding_viewed_key';
   static const String prefKeyTheme = 'theme_key';
   static const String prefKeyEmail = 'email_key';
   static const String prefKeyToken = 'token_key';
   static const String cancelled = 'Canceled';
-  static const String pending= 'Pending';
-  static const String finished= 'Finished'; 
-  static const String priceByMonth= 'price_by_month';
-  static const String priceByDay= 'price_by_day';
-  static const String priceByWeek= 'price_by_week';
-  static const String priceByHour= 'price_by_hour';
+  static const String pending = 'Pending';
+  static const String finished = 'Finished';
+  static const String priceByMonth = 'price_by_month';
+  static const String priceByDay = 'price_by_day';
+  static const String priceByWeek = 'price_by_week';
+  static const String priceByHour = 'price_by_hour';
   static const int splashTimeSecond = 1;
   static const int sliderTimeMillSecond = 1;
   static const int codeVerificationMaxLine = 1;
