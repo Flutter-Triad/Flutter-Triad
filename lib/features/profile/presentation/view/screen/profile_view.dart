@@ -9,7 +9,6 @@ import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/routes/routes.dart';
 import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
-
 import '../../controller/profile_controller.dart';
 import '../widget/custom_photo.dart';
 import '../widget/custom_profile.dart';
