@@ -15,7 +15,11 @@ Widget scaffoldWithImageBackground({
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: Constants.elevation,
-        leading: isRegisterView ? arrowBackButton() : Container(),
+        leading: isRegisterView
+            ? arrowBackButton(
+                color: ManagerColors.primaryColor,
+              )
+            : Container(),
       ),
       extendBodyBehindAppBar: true,
       backgroundColor: ManagerColors.background,

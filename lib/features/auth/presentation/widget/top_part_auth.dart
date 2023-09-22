@@ -10,7 +10,7 @@ Expanded partTopAuth() {
     child: Center(
       child: SvgPicture.asset(
         ManagerAssets.logo,
-        colorFilter: ColorFilter.mode(
+        colorFilter: const ColorFilter.mode(
           ManagerColors.background,
           BlendMode.darken,
         ),
