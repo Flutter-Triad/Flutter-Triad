@@ -4,13 +4,13 @@ import 'package:flutter_triad/core/cache/cache.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/core/storage/local/app_settings_prefs.dart';
-import 'package:flutter_triad/features/auth/domain/usecase/fcm_token_usecase.dart';
 import 'package:flutter_triad/features/auth/domain/usecase/login_usecase.dart';
 import 'package:flutter_triad/features/verification/presentation/controller/verification_controller.dart';
 import 'package:flutter_triad/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/error_handler/error_handler.dart';
+import '../../../../core/widgets/cutom_state_render_dialog.dart';
 
 class LoginController extends GetxController {
   TextEditingController email = TextEditingController();
@@ -68,18 +68,19 @@ class LoginController extends GetxController {
       );
     }, (r) async {
       Get.back();
-      dialogRender(
-          context: context,
-          message: ManagerStrings.loginSuccess,
-          title: ManagerStrings.thanks,
-          stateRenderType: StateRenderType.popUpSuccessState,
-          retryAction: () {
-            Navigator.of(context).pop();
-            Get.back();
-            Get.offAllNamed(Routes.main);
-            email.text = "";
-            password.text = "";
-          });
+      customStateRenderDialog(
+        context: context,
+        stateRenderType: StateRenderType.popUpSuccessState,
+        message: ManagerStrings.loginSuccess,
+        title: ManagerStrings.thanks,
+        child: Container(),
+      );
+      Future.delayed(
+        const Duration(seconds: 2),
+            () {
+          Get.offAllNamed(Routes.main);
+        },
+      );
       if (check) {
         _appSettingsPrefs.setEmail(email.text);
         _appSettingsPrefs.setToken(r.token.onNull());
