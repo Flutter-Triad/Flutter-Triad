@@ -58,7 +58,7 @@
   "resetPassword": "Reset Password",
   "newPassword": "Enter new Password",
   "document": "Instructions for use",
-  "logout": "log Out",
+  "logout": "Log Out",
   "error": "Error",
   "shouldAgreeTerms": "You Should Agree The Terms",
   "password": "Password",
@@ -235,5 +235,6 @@
   "youCanNotCancelSubscriptionNow": "You can't delete subscription now",
   "subscriptionAgain": "Subscription Again",
   "thereAreNoNotificationsNow": "There are no notifications now",
-  "resources": "Resources"
+  "resources": "Resources",
+  "messageLogout": "Do you want to log out?"
 }

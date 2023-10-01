@@ -72,7 +72,7 @@ class ProfileController extends GetxController {
             dialogRender(
                 context: context,
                 message: ManagerStrings.loading,
-                title: "",
+                title: '',
                 stateRenderType: StateRenderType.popUpLoadingState,
                 retryAction: () {});
             (await _logoutUseCase.execute()).fold(
