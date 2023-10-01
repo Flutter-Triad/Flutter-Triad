@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 import '../../../../config/dependency_injection.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/storage/local/app_settings_prefs.dart';
+import '../../../../core/widgets/cutom_state_render_dialog.dart';
 import '../../../../routes/routes.dart';
 
 class ProfileController extends GetxController {
@@ -92,12 +93,16 @@ class ProfileController extends GetxController {
                 Get.back();
                 if (r.status!) {
                   _appSettingsPrefs.removeCachedUserData();
-                  dialogRender(
+                  customStateRenderDialog(
                     context: context,
-                    message: ManagerStrings.logoutSuccess,
-                    title: '',
                     stateRenderType: StateRenderType.popUpSuccessState,
-                    retryAction: () {
+                    message: ManagerStrings.logoutSuccess,
+                    title: ManagerStrings.thanks,
+                    child: Container(),
+                  );
+                  Future.delayed(
+                    const Duration(seconds: 2),
+                        () {
                       Get.offAllNamed(Routes.login);
                     },
                   );
