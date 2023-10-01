@@ -123,6 +123,7 @@ initModule() async {
 
   AppSettingsPrefs _appSettings = instance<AppSettingsPrefs>();
 
+
   LocaleController localeController = LocaleController();
   localeController.changeLanguage(_appSettings.getLocale());
 
