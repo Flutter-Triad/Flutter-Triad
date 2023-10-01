@@ -17,7 +17,7 @@ class ManagerStrings {
 
   static String get friday => tr('friday');
 
-  static String get pricses => tr('pricses');
+  static String get prices => tr('prices');
 
   static String get price => tr('price');
 
