@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
 import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_triad/core/validator/validator.dart';
 import 'package:flutter_triad/core/widgets/main_button.dart';
 import 'package:flutter_triad/core/widgets/text_field.dart';
 import 'package:flutter_triad/features/profile/presentation/controller/profile_controller.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChangePassView extends StatelessWidget {
@@ -42,7 +42,7 @@ class ChangePassView extends StatelessWidget {
                 horizontal: ManagerWidth.w20,
               ),
               child: InkWell(
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_back,
                   color: ManagerColors.white,
                 ),

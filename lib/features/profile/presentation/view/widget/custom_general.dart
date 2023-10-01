@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/core/resources/manager_assets.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
@@ -5,7 +6,7 @@ import 'package:flutter_triad/core/resources/manager_sizes_util.dart';
 import 'package:flutter_triad/core/resources/manager_strings.dart';
 import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/routes/routes.dart';
-import 'package:flutter/material.dart';
+
 import '../../widgets/custom_general_item.dart';
 
 class CustomGeneral extends StatelessWidget {
@@ -27,7 +28,7 @@ class CustomGeneral extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           ManagerRadius.r16,
         ),
-        boxShadow: <BoxShadow>[
+        boxShadow: const <BoxShadow>[
           BoxShadow(
             color: ManagerColors.greyLight,
             offset: Offset(0.0, 2.0),
@@ -45,12 +46,12 @@ class CustomGeneral extends StatelessWidget {
               color: ManagerColors.black,
             ),
           ),
-          Divider(),
+          const Divider(),
           custom_general_item(
             icon: ManagerAssets.credit,
             title: ManagerStrings.credit,
           ),
-          Divider(),
+          const Divider(),
           custom_general_item(
             icon: ManagerAssets.global,
             title: ManagerStrings.language,
@@ -58,11 +59,10 @@ class CustomGeneral extends StatelessWidget {
               Navigator.pushNamed(context, Routes.localeView);
             },
           ),
-          Divider(),
+          const Divider(),
           custom_general_item(
             icon: ManagerAssets.credit,
             title: ManagerStrings.payment,
-            
           ),
         ],
       ),

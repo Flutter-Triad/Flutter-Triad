@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'dart:io';
-
 import 'package:flutter_state_render_dialog/flutter_state_render_dialog.dart';
 import 'package:flutter_triad/core/resources/manager_colors.dart';
 import 'package:flutter_triad/core/resources/manager_fonts.dart';
@@ -8,8 +8,8 @@ import 'package:flutter_triad/core/resources/manager_styles.dart';
 import 'package:flutter_triad/features/auth/domain/usecase/logout_usecase.dart';
 import 'package:flutter_triad/features/profile/data/request/edit_password_request.dart';
 import 'package:flutter_triad/features/profile/domain/usecase/edit_password_usecase.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../config/dependency_injection.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/storage/local/app_settings_prefs.dart';

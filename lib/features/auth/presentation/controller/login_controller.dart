@@ -15,9 +15,8 @@ import '../../../../core/error_handler/error_handler.dart';
 class LoginController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  LoginUseCase _loginUseCase = instance<LoginUseCase>();
-  FcmTokenUseCase _fcmTokenUseCase = instance<FcmTokenUseCase>();
-  AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
+  final LoginUseCase _loginUseCase = instance<LoginUseCase>();
+  final AppSettingsPrefs _appSettingsPrefs = instance<AppSettingsPrefs>();
   var formKey = GlobalKey<FormState>();
   bool check = false;
   bool isObscurePassword = true;
@@ -68,13 +67,6 @@ class LoginController extends GetxController {
         },
       );
     }, (r) async {
-      // var fcmToken = await FirebaseMessaging.instance.getToken();
-      //
-      // _fcmTokenUseCase.execute(
-      //   FcmTokenRequest(
-      //     fcmToken: fcmToken.onNull(),
-      //   ),
-      // );
       Get.back();
       dialogRender(
           context: context,
@@ -102,7 +94,6 @@ class LoginController extends GetxController {
   void dispose() {
     email.dispose();
     password.dispose();
-    formKey.currentState!.dispose();
     super.dispose();
   }
 }

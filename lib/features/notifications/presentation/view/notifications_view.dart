@@ -1,9 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_triad/config/dependency_injection.dart';
 import 'package:flutter_triad/core/extensions/extensions.dart';
-import 'package:flutter_triad/core/resources/manager_assets.dart';
 import 'package:flutter_triad/features/notifications/domain/model/notification_model.dart';
 import 'package:flutter_triad/features/notifications/presentation/controller/notifications_controller.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_fonts.dart';
@@ -40,9 +39,14 @@ class _NotificationsViewState extends State<NotificationsView> {
       body: GetBuilder<NotificationsController>(
         builder: (controller) {
           return RefreshIndicator(
+            color: ManagerColors.primaryColor,
+            backgroundColor: ManagerColors.white,
+            onRefresh: () async {
+              controller.performRefresh();
+            },
             child: controller.isLoading == 0
-                ? ShimmerList()
-                : controller.notifications.length > 0
+                ? const ShimmerList()
+                : controller.notifications.isNotEmpty
                     ? ListView(
                         children: [
                           controller.isLoading == 1
@@ -53,9 +57,8 @@ class _NotificationsViewState extends State<NotificationsView> {
                                   ),
                                   child: ListView.builder(
                                     shrinkWrap: true,
-                                    physics: ScrollPhysics(),
+                                    physics: const ScrollPhysics(),
                                     itemCount: controller.notifications.length,
-                                    //controller.notifications.length,
                                     itemBuilder: (context, index) {
                                       NotificationModel notificationItem =
                                           controller.notifications[index];
@@ -73,17 +76,12 @@ class _NotificationsViewState extends State<NotificationsView> {
                     : Center(
                         child: Text(
                           ManagerStrings.thereAreNoNotificationsNow,
-                          style: getMediumTextStyle(
-                            fontSize: ManagerFontSize.s26,
+                          style: getRegularTextStyle(
+                            fontSize: ManagerFontSize.s20,
                             color: ManagerColors.black,
                           ),
                         ),
                       ),
-            color: ManagerColors.primaryColor,
-            backgroundColor: ManagerColors.white,
-            onRefresh: () async {
-              controller.performRefresh();
-            },
           );
         },
       ),

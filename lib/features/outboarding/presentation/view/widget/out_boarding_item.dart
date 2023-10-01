@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../../../core/resources/manager_colors.dart';
 import '../../../../../core/resources/manager_fonts.dart';
 import '../../../../../core/resources/manager_sizes_util.dart';
@@ -8,11 +7,11 @@ import '../../../../../core/resources/manager_styles.dart';
 import 'slider_indicator.dart';
 
 class OutBoardingItem extends StatelessWidget {
-  String title;
-  String subTitle;
-  String image;
+  final String title;
+  final String subTitle;
+  final String image;
 
-  OutBoardingItem({
+  const OutBoardingItem({
     super.key,
     required this.title,
     required this.subTitle,

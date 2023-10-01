@@ -18,6 +18,7 @@ class ResetPasswordView extends StatelessWidget {
 
   final FieldValidator _validator = FieldValidator();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
