@@ -82,73 +82,28 @@ class ProfileController extends GetxController {
       },
       (r) {
         Get.back();
-        Get.defaultDialog(
-          backgroundColor: Colors.white,
-          title: "",
-          middleText: ManagerStrings.messageLogout,
-          middleTextStyle: getMediumTextStyle(
-              fontSize: ManagerFontSize.s16, color: ManagerColors.black),
-          actions: [
-            ElevatedButton(
-              onPressed: () {
-                if (r.status!) {
-                  _appSettingsPrefs.removeCachedUserData();
-                  dialogRender(
-                    context: context,
-                    message: ManagerStrings.thanks,
-                    title: ManagerStrings.logoutSuccess,
-                    stateRenderType: StateRenderType.popUpSuccessState,
-                    retryAction: () {
-                      Get.offAllNamed(Routes.login);
-                    },
-                  );
-                } else {
-                  dialogRender(
-                    context: context,
-                    message: '',
-                    title: ManagerStrings.logoutFailed,
-                    stateRenderType: StateRenderType.popUpErrorState,
-                    retryAction: () {
-                      Get.back();
-                    },
-                  );
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: ManagerColors.primaryColor,
-                padding: EdgeInsets.symmetric(
-                    horizontal: ManagerWidth.w36, vertical: ManagerHeight.h8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(ManagerRadius.r6),
-                ),
-              ),
-              child: Text(
-                ManagerStrings.yes,
-                style: getMediumTextStyle(
-                    fontSize: ManagerFontSize.s16, color: ManagerColors.white),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Get.back();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(
-                    horizontal: ManagerWidth.w36, vertical: ManagerHeight.h8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(ManagerRadius.r6),
-                ),
-              ),
-              child: Text(
-                ManagerStrings.no,
-                style: getMediumTextStyle(
-                    fontSize: ManagerFontSize.s16,
-                    color: ManagerColors.primaryColor),
-              ),
-            ),
-          ],
-        );
+        if (r.status!) {
+          _appSettingsPrefs.removeCachedUserData();
+          dialogRender(
+            context: context,
+            message: ManagerStrings.thanks,
+            title: ManagerStrings.logoutSuccess,
+            stateRenderType: StateRenderType.popUpSuccessState,
+            retryAction: () {
+              Get.offAllNamed(Routes.login);
+            },
+          );
+        } else {
+          dialogRender(
+            context: context,
+            message: '',
+            title: ManagerStrings.logoutFailed,
+            stateRenderType: StateRenderType.popUpErrorState,
+            retryAction: () {
+              Get.back();
+            },
+          );
+        }
       },
     );
   }
