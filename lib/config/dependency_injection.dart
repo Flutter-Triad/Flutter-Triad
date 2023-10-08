@@ -84,7 +84,7 @@ import '../features/verification/domain/usecases/verify_email_usecase.dart';
 import '../features/auth/presentation/controller/login_controller.dart';
 import '../features/forget_password/presentation/controller/forget_pass_controller.dart';
 import '../features/home/presentation/controller/home_controller.dart';
-import '../features/outboarding/presentation/controller/out_boarding_controller.dart';
+import '../features/out_boarding/presentation/controller/out_boarding_controller.dart';
 import '../features/profile/presentation/controller/profile_controller.dart';
 import '../features/verification/presentation/controller/verification_controller.dart';
 import '../features/splash/presentation/controller/splash_controller.dart';

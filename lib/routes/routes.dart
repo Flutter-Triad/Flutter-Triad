@@ -14,23 +14,23 @@ import 'package:flutter_triad/features/search/presentation/view/search_view.dart
 import 'package:flutter_triad/features/verification/presentation/view/screen/verification_screen.dart';
 import 'package:flutter/material.dart';
 import '../features/notifications/presentation/view/notifications_view.dart';
-import '../features/outboarding/presentation/view/screen/out_boarding_view.dart';
+import '../features/out_boarding/presentation/view/screen/out_boarding_view.dart';
 import '../features/splash/presentation/view/splash_view.dart';
 
 class Routes {
   static const String splashView = '/splash_view';
-  static const String outBoarding = '/outBoarding_view';
+  static const String outBoarding = '/out_boarding_view';
   static const String login = '/login_view';
   static const String register = '/register_view';
   static const String home = '/home_view';
-  static const String forgetPassword = '/forgetPassword';
+  static const String forgetPassword = '/forget_password';
   static const String verification = '/verification_view';
   static const String main = '/main_view';
   static const String setting = '/setting_view';
   static const String search = '/search_view';
   static const String editProfile = '/editProfile';
-  static const String changePassword = '/changePassword';
-  static const String resetPassword = '/resetPassword';
+  static const String changePassword = '/change_password';
+  static const String resetPassword = '/reset_password';
   static const String localeView = '/locale_view';
   static const String notifications = '/notifications';
 }
@@ -54,18 +54,18 @@ class RouteGenerator {
         initForgetPassword();
         return MaterialPageRoute(builder: (_) => ForgetPassView());
       case Routes.home:
-        return MaterialPageRoute(builder: (_) => HomeView());
+        return MaterialPageRoute(builder: (_) => const HomeView());
       case Routes.verification:
         initVerifyEmail();
         return MaterialPageRoute(builder: (_) => VerificationScreen());
       case Routes.main:
         initMainModule();
-        return MaterialPageRoute(builder: (_) => MainView());
+        return MaterialPageRoute(builder: (_) => const MainView());
       case Routes.setting:
         initSettingModule();
-        return MaterialPageRoute(builder: (_) => SettingView());
+        return MaterialPageRoute(builder: (_) => const SettingView());
       case Routes.search:
-        return MaterialPageRoute(builder: (_) => SearchView());
+        return MaterialPageRoute(builder: (_) => const SearchView());
       case Routes.editProfile:
         initProfile();
         return MaterialPageRoute(builder: (_) => EditProfileView());
@@ -75,10 +75,10 @@ class RouteGenerator {
         initResetPasswordModule();
         return MaterialPageRoute(builder: (_) => ResetPasswordView());
       case Routes.localeView:
-        return MaterialPageRoute(builder: (_) => LocaleView());
+        return MaterialPageRoute(builder: (_) => const LocaleView());
       case Routes.notifications:
         initNotifications();
-        return MaterialPageRoute(builder: (_) => NotificationsView());
+        return MaterialPageRoute(builder: (_) => const NotificationsView());
       default:
         return unDefinedRoute();
     }
